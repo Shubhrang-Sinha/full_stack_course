@@ -1,18 +1,28 @@
 const Header = (course) => {
 
   return(
-    <div>
+    
       <h1>{course.course}</h1>
-    </div>
+    )
+}
+
+const Part = ({part,exercise}) =>{
+  return(
+    <span>
+      part = {part.part} exercises = {exercise.exercise}
+    </span>
   )
 }
 
 
 const Content = ({part,exercise}) =>{
+
+  part = {part}
+  exercise = {exercise}
   return(
     <div>
       <p>
-        part {part.part}  exercises {exercise.exercise}
+        <Part part= {part}     exercise = {exercise}/>
       </p>
     </div>
   )
@@ -20,11 +30,11 @@ const Content = ({part,exercise}) =>{
 
 const Total = (nof) =>{
   return(
-    <div>
+    
       <p>
         total no. of exercise = {nof.nof}
       </p>
-    </div>
+    
   )
 }
 
