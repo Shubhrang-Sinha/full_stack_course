@@ -1,8 +1,8 @@
 const Course = ({course}) => {
 
   const Total = course.parts.reduce((sum,part) =>{
-  return sum + part.exercises},0
-  )
+  return sum + part.exercises},0)
+  
   const Header = ({name}) => {
      return(
       <h1>{name}</h1>

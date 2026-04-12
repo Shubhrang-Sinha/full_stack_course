@@ -1,8 +1,10 @@
 import Course from "./components/Course"
+import { useState } from "react"
 
 
 
 const App = () => {
+  
   const courses = [
     {
       name: 'Half Stack application development',
