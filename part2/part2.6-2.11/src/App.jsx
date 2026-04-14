@@ -1,13 +1,21 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Person'
 
 const App = () => {
-  const [persons, setPersons] = useState([
-    { name: 'Arto Hellas', number: '040-123456' },
-    { name: 'Ada Lovelace', number: '39-44-5323523' }
-  ])
+  const [persons, setPersons] = useState([])
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:3001/persons')
+      .then(response => response.json())
+      .then(data => {
+        setPersons(data)
+      })
+      .catch(error => {
+        console.log('Error fetching persons:', error)
+      })
+  }, [])
 
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
